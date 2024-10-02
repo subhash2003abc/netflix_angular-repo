@@ -1,0 +1,23 @@
+<div class="container px-5 mt-5 mb-5">
+  <p class="font-weight-bold h4 my-3 ml-3">{{title}}</p>
+  <div #swiperContainer class="swiper-container ">
+    <div class="swiper-wrapper">
+    <ng-container *ngFor="let movie of videoContents">
+      <div class="swiper-slide relative" (mouseenter)="setHoverMovie(movie)" (mouseleave)="clearHoverMovie()">
+        <img [src]="movie.poster_path | image" alt="Movie Poster" class="img-fluid rounded" />
+        <div @fade *ngIf="(movie.title === this.selectedContent) || (movie.name === this.selectedContent)" class="desc " >
+          <span class="d-flex flex-wrap fw-bold">{{movie.original_title}}</span>
+          <p class="text-small my-2">{{movie.overview | charcter:100}}</p>
+          <div class="py-3 position-absolute w-100 bottom-0" >
+            <p class="text-small d-flex justify-content-between align-items-center">
+              <span class="text-success">Vote Average: {{movie.vote_average}}</span>
+              <i class="fa fa-2x fa-chevron-circle-down" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    
+  </div>
+</div>
+</div>

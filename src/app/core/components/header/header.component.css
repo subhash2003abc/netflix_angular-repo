@@ -1,0 +1,25 @@
+.bg-main{
+   height:68px;
+    z-index:10;
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+
+}
+.logo{
+    position: relative;
+    right:70px;
+    margin:0;
+}
+
+.dark-nav{
+    background-color: black;
+}
+
+.navbar-nav{
+    position: relative;
+    right:40px;
+}
+
+
